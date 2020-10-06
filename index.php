@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', '/');
+define('BASE_URL', './index.php');
 define('DB_USER', 'todolist');
 define('DB_PASS', 'chAngeMeN0w');
 define('DB_NAME', 'todolist');
@@ -53,7 +53,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = ''; // IMPLEMENT ME
+        $deleteQuery = 'DELETE FROM todo WHERE id = '.$id;
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -131,7 +131,7 @@ $items = $db->query($selectQuery);
             <form action='<?= BASE_URL ?>' method='post'>
               <input type='hidden' name='id' value='<?= $item['id'] ?>' />
 
-              <div class='btn-group btn-group-sm'</div>
+              <div class='btn-group btn-group-sm'></div>
 
                 <!-- Todo item toggle button -->
                 <button type='submit' name='action' value='toggle' class='btn btn-primary'>
