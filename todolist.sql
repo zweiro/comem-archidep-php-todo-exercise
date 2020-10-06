@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS todolist;
-CREATE USER IF NOT EXISTS 'todolist'@'localhost' IDENTIFIED WITH mysql_native_password BY 'chAngeMeN0w!';
+CREATE USER IF NOT EXISTS 'todolist'@'localhost' IDENTIFIED BY 'chAngeMeN0w';
 GRANT ALL PRIVILEGES ON todolist.* TO 'todolist'@'localhost' ;
 
 USE todolist;
